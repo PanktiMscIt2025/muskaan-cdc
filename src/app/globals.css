@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand Colors from Logo */
+  --color-brand-pink: #E91E8C;
+  --color-brand-purple: #7B2D8B;
+  --color-brand-orange: #F97316;
+  --color-brand-green: #16A34A;
+  --color-brand-blue: #2563EB;
+  --color-brand-yellow: #D97706;
+  --color-brand-teal: #0D9488;
+  --color-brand-red: #DC2626;
+  --color-cream: #FFFDF7;
+  --color-soft-pink: #FDF2F8;
+  --color-soft-purple: #F5F3FF;
+
+  /* Typography */
+  --font-nunito: var(--font-nunito-var), 'Nunito', sans-serif;
+  --font-inter: var(--font-inter-var), 'Inter', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+  background-color: var(--color-cream);
+  color: #1a1a2e;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-nunito);
+  font-weight: 800;
+}
+
+/* Gradient utilities */
+.gradient-text {
+  background: linear-gradient(135deg, #E91E8C, #7B2D8B, #2563EB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #E91E8C, #F97316, #D97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #FDF2F8 0%, #F5F3FF 30%, #EFF6FF 60%, #F0FDF4 100%);
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Dot trail animation (from logo) */
+@keyframes dotTrail {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0); }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.float-anim {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Wave border */
+.wave-bottom {
+  position: relative;
+}
+
+.wave-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--color-cream);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #E91E8C;
+  border-radius: 3px;
+}
+
+/* Form focus ring */
+.form-input:focus {
+  outline: none;
+  border-color: #E91E8C;
+  box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-anim { animation: none; }
+  .card-hover:hover { transform: none; }
+  html { scroll-behavior: auto; }
 }
