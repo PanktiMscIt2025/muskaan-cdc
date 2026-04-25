@@ -38,7 +38,7 @@ export default function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "Our Programs", href: "/programs" },
-                { label: "Our Approach", href: "/#approach" },
+                { label: "Gallery", href: "/gallery" },
                 { label: "About Us", href: "/about" },
                 { label: "Contact Us", href: "/contact" },
               ].map((link) => (
