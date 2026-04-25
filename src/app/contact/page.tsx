@@ -150,8 +150,8 @@ export default function ContactPage() {
                   {
                     icon: <MapPin size={20} />,
                     label: "Location",
-                    value: "India",
-                    href: undefined,
+                    value: "2nd Floor, Binali Complex, Solas Hospital, 132 Feet Ring Rd, Naranpura, Ahmedabad, Gujarat 380063",
+                    href: "https://maps.google.com/?q=2nd+floor+Binali+Complex+Solas+Hospital+225+132+Feet+Ring+Rd+Naranpura+Ahmedabad+Gujarat+380063",
                     color: "text-brand-blue",
                     bg: "bg-blue-50",
                   },

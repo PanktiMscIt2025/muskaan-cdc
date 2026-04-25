@@ -77,7 +77,14 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3 text-gray-400 text-sm">
                 <MapPin size={16} className="text-brand-pink mt-0.5 shrink-0" />
-                <span>India</span>
+                <a
+                  href="https://maps.google.com/?q=2nd+floor+Binali+Complex+Solas+Hospital+225+132+Feet+Ring+Rd+Naranpura+Ahmedabad+Gujarat+380063"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-pink transition-colors leading-relaxed"
+                >
+                  2nd Floor, Binali Complex, Solas Hospital, 132 Feet Ring Rd, Naranpura, Ahmedabad, Gujarat 380063
+                </a>
               </li>
             </ul>
           </div>
