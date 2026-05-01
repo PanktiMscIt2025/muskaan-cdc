@@ -3,24 +3,14 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { contactSchema, type ContactFormData } from "@/lib/contact-schema";
 
-const schema = z.object({
-  parentName: z.string().min(2, "Parent name must be at least 2 characters"),
-  childName: z.string().min(2, "Child name must be at least 2 characters"),
-  childAge: z.string().min(1, "Please enter child's age"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  concern: z.string().min(1, "Please select a concern area"),
-  preferredTime: z.string().optional(),
-  message: z.string().min(10, "Please tell us a bit more (min 10 characters)"),
-});
-
-type FormData = z.infer<typeof schema>;
+const schema = contactSchema;
+type FormData = ContactFormData;
 
 const concernOptions = [
   { value: "", label: "Select a concern / program of interest..." },
