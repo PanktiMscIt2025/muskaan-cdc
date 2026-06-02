@@ -16,7 +16,7 @@ export default function Footer() {
                 alt="Muskaan Child Development Center"
                 fill
                 sizes="176px"
-                className="object-contain brightness-0 invert"
+                className="object-contain"
               />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-5 max-w-sm">
